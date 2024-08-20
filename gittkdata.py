@@ -13,7 +13,7 @@ st.set_page_config(page_title="达人数据查询系统", layout="wide")
 st.title("达人数据查询系统")
 
 # GitHub中Excel文件的URL
-EXCEL_FILE_URL = "https://github.com/[YOUR_GITHUB_USERNAME]/[YOUR_REPO_NAME]/raw/main/data/your_excel_file.xlsx"
+EXCEL_FILE_URL = "https://github.com/2686917784/yinhutkdata/blob/main/Aeg01data.xlsx"
 
 # 读取Excel文件
 @st.cache_data
