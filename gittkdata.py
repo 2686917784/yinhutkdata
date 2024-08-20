@@ -20,7 +20,7 @@ def download_and_configure_font(url, font_path='SimHei.ttf'):
     mpl.rcParams['axes.unicode_minus'] = False
 
 # 设置字体 URL
-FONT_URL = "https://your-public-url.com/SimHei.ttf"  # 替换为实际的字体文件 URL
+FONT_URL = "https://github.com/2686917784/yinhutkdata/raw/main/SimHei.ttf"  # 替换为实际的字体文件 URL
 
 # 下载并配置字体
 download_and_configure_font(FONT_URL)
