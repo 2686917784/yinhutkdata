@@ -6,7 +6,11 @@ import seaborn as sns
 import io
 import requests
 import matplotlib as mpl
+import matplotlib.pyplot as plt
 
+# 设置字体和负号显示
+mpl.rcParams['font.sans-serif'] = ['SimHei']
+mpl.rcParams['axes.unicode_minus'] = False
 # 设置页面配置
 st.set_page_config(page_title="达人数据查询系统", layout="wide")
 
