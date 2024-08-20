@@ -5,10 +5,15 @@ import numpy as np
 import seaborn as sns
 import io
 import requests
-
+import matplotlib.pyplot as plt
+import matplotlib as mpl
 # 设置页面配置
 st.set_page_config(page_title="达人数据查询系统", layout="wide")
 
+
+# 设置字体为 SimHei (SimHei 是一个常见的中文字体)
+mpl.rcParams['font.sans-serif'] = ['SimHei']
+mpl.rcParams['axes.unicode_minus'] = False  # 解决负号 '-' 显示为方块的问题
 # 标题
 st.title("达人数据查询系统")
 
