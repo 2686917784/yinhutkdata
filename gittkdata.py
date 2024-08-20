@@ -6,17 +6,24 @@ import seaborn as sns
 import io
 import requests
 import matplotlib as mpl
-import matplotlib.pyplot as plt
 
-# 设置字体和负号显示
-mpl.rcParams['font.sans-serif'] = ['SimHei']
-mpl.rcParams['axes.unicode_minus'] = False
 # 设置页面配置
 st.set_page_config(page_title="达人数据查询系统", layout="wide")
 
-# 设置字体为 SimHei (SimHei 是一个常见的中文字体)
-mpl.rcParams['font.sans-serif'] = ['SimHei']
-mpl.rcParams['axes.unicode_minus'] = False  # 解决负号 '-' 显示为方块的问题
+# 下载 SimHei 字体并配置
+def download_and_configure_font(url, font_path='SimHei.ttf'):
+    response = requests.get(url)
+    with open(font_path, 'wb') as f:
+        f.write(response.content)
+    mpl.font_manager.fontManager.addfont(font_path)
+    mpl.rcParams['font.sans-serif'] = [mpl.font_manager.FontProperties(fname=font_path).get_name()]
+    mpl.rcParams['axes.unicode_minus'] = False
+
+# 设置字体 URL
+FONT_URL = "https://your-public-url.com/SimHei.ttf"  # 替换为实际的字体文件 URL
+
+# 下载并配置字体
+download_and_configure_font(FONT_URL)
 
 # 标题
 st.title("达人数据查询系统")
