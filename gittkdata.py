@@ -76,7 +76,7 @@ if df is not None:
                     """,
                     unsafe_allow_html=True
                 )
-                st.dataframe(result[['达人id', '达人名称', '粉丝数量', '商品交易总额', '成交件数', '平均播放数', '互动率', '评分']], height=8)
+                st.dataframe(result[['达人id', '达人名称', '达人类型', '粉丝数量', '商品交易总额', '成交件数', '平均播放数', '互动率', '评分']], height=8)
 
                 # 让用户选择一个达人进行详细分析
                 selected_name = st.selectbox("选择一个达人进行详细分析：", result['达人名称'].tolist())
@@ -120,6 +120,7 @@ if df is not None:
                         info = {
                             "达人ID": daren_data['达人id'],
                             "达人名称": daren_data['达人名称'],
+                            "达人类型": daren_data['达人类型'],
                             "粉丝数量": f"{daren_data['粉丝数量']:,}",
                             "商品交易总额": f"¥{daren_data['商品交易总额']:,.2f}",
                             "成交件数": f"{daren_data['成交件数']:,}",
