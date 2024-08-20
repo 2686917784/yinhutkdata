@@ -5,15 +5,15 @@ import numpy as np
 import seaborn as sns
 import io
 import requests
-import matplotlib.pyplot as plt
 import matplotlib as mpl
+
 # 设置页面配置
 st.set_page_config(page_title="达人数据查询系统", layout="wide")
-
 
 # 设置字体为 SimHei (SimHei 是一个常见的中文字体)
 mpl.rcParams['font.sans-serif'] = ['SimHei']
 mpl.rcParams['axes.unicode_minus'] = False  # 解决负号 '-' 显示为方块的问题
+
 # 标题
 st.title("达人数据查询系统")
 
@@ -65,7 +65,7 @@ if df is not None:
                     """,
                     unsafe_allow_html=True
                 )
-                st.dataframe(result[['达人id', '达人名称', '粉丝数量', '商品交易总额', '成交件数', '平均播放数', '互动率', '评分']], height=8)
+                st.dataframe(result[['达人id', '达人名称', '粉丝数量', '商品交易总额', '成交件数', '平均播放数', '互动率', '评分']], height=300)
 
                 # 让用户选择一个达人进行详细分析
                 selected_name = st.selectbox("选择一个达人进行详细分析：", result['达人名称'].tolist())
