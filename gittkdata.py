@@ -65,7 +65,7 @@ if df is not None:
                     """,
                     unsafe_allow_html=True
                 )
-                st.dataframe(result[['达人id', '达人名称', '粉丝数量', '商品交易总额', '成交件数', '平均播放数', '互动率', '评分']], height=300)
+                st.dataframe(result[['达人id', '达人名称', '粉丝数量', '商品交易总额', '成交件数', '平均播放数', '互动率', '评分']], height=8)
 
                 # 让用户选择一个达人进行详细分析
                 selected_name = st.selectbox("选择一个达人进行详细分析：", result['达人名称'].tolist())
