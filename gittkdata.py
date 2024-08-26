@@ -11,7 +11,7 @@ import requests
 st.set_page_config(page_title="TikTok达人数据查询系统", layout="wide")
 
 # 配置中文字体
-plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['font.sans-serif'] = "https://github.com/2686917784/yinhutkdata/blob/main/SimHei.ttf"
 plt.rcParams['axes.unicode_minus'] = False
 
 # 标题
@@ -26,7 +26,7 @@ def load_data():
     try:
         response = requests.get(EXCEL_FILE_URL)
         response.raise_for_status()
-        df = pd.read_excel(io.BytesIO(response.content))
+        df = pd.read_excel(io.BytesIO(response.content), engine='openpyxl')
         df['达人id'] = df['达人id'].astype(str)
         df.set_index('达人id', inplace=True)
         return df
