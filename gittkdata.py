@@ -11,7 +11,7 @@ import requests
 st.set_page_config(page_title="TikTok达人数据查询系统", layout="wide")
 
 # 配置中文字体
-plt.rcParams['font.sans-serif'] = "https://github.com/2686917784/yinhutkdata/blob/main/SimHei.ttf"
+plt.rcParams['font.sans-serif'] =['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 
 # 标题
