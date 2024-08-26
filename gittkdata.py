@@ -6,7 +6,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import io
 import base64
-
+import requests
 # 设置页面配置
 st.set_page_config(page_title="TikTok达人数据查询系统", layout="wide")
 
@@ -17,14 +17,16 @@ plt.rcParams['axes.unicode_minus'] = False
 # 标题
 st.title("TikTok达人数据查询系统")
 
-# 指定本地Excel文件路径
-EXCEL_FILE_PATH = r"D:\TK工作表\TK工作表\TK达人数据\达人画像分析工作\4.数据入库\待入库数据\8月第三次达人画像数据.xlsx"  # 请替换为实际的本地文件路径
+# GitHub中Excel文件的URL
+EXCEL_FILE_URL = "https://github.com/2686917784/yinhutkdata/edit/raw/main/data/Aeg01data.xlsx"
 
 # 读取Excel文件
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_excel(EXCEL_FILE_PATH)
+        response = requests.get(EXCEL_FILE_URL)
+        response.raise_for_status()
+        df = pd.read_excel(io.BytesIO(response.content))
         df['达人id'] = df['达人id'].astype(str)
         df.set_index('达人id', inplace=True)
         return df
