@@ -18,7 +18,7 @@ plt.rcParams['axes.unicode_minus'] = False
 st.title("TikTok达人数据查询系统")
 
 # GitHub中Excel文件的URL
-EXCEL_FILE_URL = "https://github.com/2686917784/yinhutkdata/raw/main/Aeg001.xlsx"
+EXCEL_FILE_URL = "https://github.com/2686917784/yinhutkdata/raw/main/8月第三次达人画像数据.xlsx"
 
 # 读取Excel文件
 @st.cache_data
