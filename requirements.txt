@@ -1,8 +1,7 @@
 streamlit
 pandas
-matplotlib
 numpy
-seaborn
-openpyxl
-streamlit==1.10.0
 plotly
+wordcloud
+matplotlib
+requests
