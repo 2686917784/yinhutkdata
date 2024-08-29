@@ -19,7 +19,7 @@ st.title("TikTok达人数据查询系统")
 
 # 指定本地Excel文件路径
 # GitHub中Excel文件的URL
-EXCEL_FILE_URL = "https://github.com/2686917784/yinhutkdata/edit/raw/main/data/8月第三次达人画像数据.xlsx"
+EXCEL_FILE_URL = "https://github.com/2686917784/yinhutkdata/raw/main/data/8月第三次达人画像数据.xlsx"
 
 # 读取Excel文件
 @st.cache_data
