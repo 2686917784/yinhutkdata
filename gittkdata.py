@@ -34,7 +34,10 @@ def load_data():
         return df
     except Exception as e:
         st.error(f"加载Excel文件时出错：{e}")
-        return None
+        st.error(f"加载Excel文件时出错：{e}")
+        st.error(f"错误类型：{type(e).__name__}")
+        st.error(f"错误详情：{str(e)}")
+    return None
 
 
 # 格式化互动率
