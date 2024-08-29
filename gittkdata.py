@@ -26,8 +26,9 @@ EXCEL_FILE_URL = "https://github.com/2686917784/yinhutkdata/edit/raw/main/data/8
 def load_data():
     try:
         response = requests.get(EXCEL_FILE_URL)
+        
         response.raise_for_status()
-        df = pd.read_excel(io.BytesIO(response.content))
+        df = pd.read_excel(io.BytesIO(response.content), engine='openpyxl')
         df['达人id'] = df['达人id'].astype(str)
         df.set_index('达人id', inplace=True)
         return df
